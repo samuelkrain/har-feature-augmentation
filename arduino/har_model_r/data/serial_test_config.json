@@ -1,0 +1,12 @@
+{
+    "data type": "raw-float",
+    "delay after": 0.1,
+    "test data": [
+        {
+            "file name": "C:/Users/samue/Documents/Arduino/Sketches/har_model/data/data_combined.csv",
+            "label": "X",
+            "regex": "Detected (\\d+) in (\\d+)ms \\(expected (\\d+)\\)",
+            "expr": "groups[1] == groups[3]"
+        }
+    ]
+}
