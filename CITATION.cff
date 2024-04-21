@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Krain
+    given-names: Samuel
+title: "Feature-Augmented CNN for Microcontrollers"
+version: 1.0
+identifiers:
+date-released: 2024-04-17
