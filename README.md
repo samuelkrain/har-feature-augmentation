@@ -2,6 +2,11 @@
 
 Model architectures and data for feature-augmented CNNs deployed on TinyML for use in HAR applications
 
+## Dependencies
+
+- [TensorFlow 2 Framework](https://www.tensorflow.org/) (Inc. with Google Colab)
+- [Arduino TFLite Library](https://github.com/tensorflow/tflite-micro-arduino-examples)
+
 ## File Structure
 
 `X` is used to as a placeholder for specific architectures or model version files.
@@ -60,8 +65,15 @@ Model architectures and data for feature-augmented CNNs deployed on TinyML for u
 
 ```
 
-The `.ipynb` files can be run in Google Colab. To run the file, a Google Drive must be connected containing the files in `uci_data`.
+## Workflow
 
-They will automatically generate `har_detection_model.cpp` and `test_data.cpp` files that can be copied into the arduino project directory.
+- Modify all necessary file directories in the python files, and the serial port in `har_serial_com.py`.
+- Run the `.ipynb` files in Google Colab. To run the file, a Google Drive must be connected containing the files in `uci_data`.
+- This will automatically generate `har_detection_model.cpp` and `test_data.cpp` files.
+- Download the ZIP file and copy the `.cpp` and `.h` files to the Arduino project directory matching the model type (R,F or A).
+- Connect an Arduin
+- Compile using the Arduino IDE.
+- Copy `har_serial_com.py` into the Scripts subfolder of the Arduino TFLite Library
+- Open the command line at the directory of the installed Arduino TFLite library.
+- Run the command `python .\scripts\har_serial_com.py --example har_model --verbose all` ([more info](https://github.com/tensorflow/tflite-micro-arduino-examples/tree/main/src/test_over_serial))
 
-Note that the file directories must be modified.
